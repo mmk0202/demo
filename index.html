@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Folk School - Corporate Offerings</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- EXTERNAL DEPENDENCIES (FONTS & ICONS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    /* --- ============================================ --- */
+    /* --- GLOBAL WORDPRESS RESET & BASE STYLES --- */
+    /* --- ============================================ --- */
+    body, html {
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* This class prevents body scrolling when mobile menu is open */
+    .mobile-menu-active {
+        overflow: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* --- ================================== --- */
+    /* --- SECTION 1: FIXED NAVIGATION BAR --- */
+    /* --- ================================== --- */
+    .site-header { 
+        font-family: 'Poppins', sans-serif;
+        background-color: white; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
+        padding: 1rem 0; 
+        position: sticky; /* Makes header stick to the top */
+        top: 0;
+        z-index: 1001; 
+    }
+    .site-header .container { 
+        width: 100%; 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0 2rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    .site-header .logo-img { 
+        max-height: 50px; /* Adjusted for better proportion */
+        display: block;
+    }
+    .site-header .nav-menu { 
+        display: flex; 
+        align-items: center; 
+        gap: 2rem; 
+    }
+    .site-header .nav-links { 
+        display: flex; 
+        gap: 2rem; 
+        align-items: center; 
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .site-header .nav-link a { 
+        color: #0f2a45; 
+        font-weight: 600; 
+        font-size: 1rem; /* Standardized font size */
+        text-decoration: none; 
+        transition: color 0.2s ease; 
+        white-space: nowrap; 
+    }
+    .site-header .nav-link a:hover { 
+        color: #193773; 
+    }
+    .site-header .nav-cta-group { 
+        display: flex; 
+        align-items: center; 
+        gap: 1rem; 
+    }
+    .site-header .nav-cta-btn { 
+        padding: 10px 20px; 
+        font-size: 0.9rem; 
+        font-weight: 600; 
+        color: #fff; 
+        background-color: #485627; 
+        border: none; 
+        border-radius: 8px; 
+        text-decoration: none; 
+        white-space: nowrap; 
+        transition: all 0.3s ease; 
+    }
+    .site-header .nav-cta-btn:hover { 
+        transform: translateY(-2px); 
+        box-shadow: 0 8px 15px rgba(179, 148, 28, 0.25); 
+        background-color: #c8a420; 
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-button { 
+        display: none; /* Hidden on desktop */
+        cursor: pointer; 
+        padding: 10px; 
+        border: none; 
+        background: none;
+        z-index: 1002; /* Ensure it's above other header content */
+    }
+    .hamburger-line { 
+        width: 30px; 
+        height: 3px; 
+        background-color: #0f2a45; 
+        margin: 6px 0; 
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+    
+    /* Responsive Styles for Tablet and Mobile */
+    @media screen and (max-width: 1200px) {
+        .site-header .nav-links, .site-header .nav-menu {
+            gap: 1.5rem;
+        }
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .mobile-menu-button { display: block; }
+        
+        .site-header .nav-menu { 
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            gap: 1.5rem;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            
+            /* Hide by default, show with class */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+        
+        /* State when mobile menu is OPEN */
+        .site-header.menu-open .nav-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .site-header .nav-links {
+            flex-direction: column;
+            width: 100%;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .site-header .nav-link a {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .site-header .nav-cta-group {
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem;
+            margin-top: 1rem;
+            align-items: center;
+        }
+        
+        .site-header .nav-cta-btn {
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            padding: 14px 20px;
+        }
+
+        /* Animate Hamburger to "X" */
+        .site-header.menu-open .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .site-header.menu-open .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .site-header.menu-open .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    }
+
+    /* --- ======================================== --- */
+    /* --- CORPORATE INTRO SECTION --- */
+    /* --- ======================================== --- */
+    #corporate-intro-section { 
+        font-family: 'Poppins', sans-serif; 
+        background: linear-gradient(135deg, #0f2a45 0%, #193773 100%);
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    #corporate-intro-section .intro-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    #corporate-intro-section h1 { font-size: 40px; font-weight: 800; margin-bottom: 30px; line-height: 1.2; }
+    #corporate-intro-section .intro-text { font-size: 18px; line-height: 1.6; margin-bottom: 25px; color: #f0f8ff; }
+    #corporate-intro-section .highlight-text { font-size: 20px; font-weight: 600; color: #b3941c; margin-bottom: 20px; }
+    #corporate-intro-section .animated-waves { position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; z-index: 1; pointer-events: none; }
+    #corporate-intro-section .animated-waves > svg { width: 200%; height: 100%; position: absolute; bottom: 0; left: 0; }
+    #corporate-intro-section .wave-1 { animation: fs-wave-slide 20s linear infinite; fill: rgba(255, 255, 255, 0.08); }
+    #corporate-intro-section .wave-2 { animation: fs-wave-slide 12s linear infinite reverse; fill: rgba(255, 255, 255, 0.05); }
+    @keyframes fs-wave-slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (max-width: 768px) { #corporate-intro-section { padding: 80px 20px; } #corporate-intro-section h1 { font-size: 28px; } #corporate-intro-section .intro-text { font-size: 16px; } #corporate-intro-section .highlight-text { font-size: 18px; } }
+
+    /* --- ======================================== --- */
+    /* --- WHAT SETS US APART SECTION --- */
+    /* --- ======================================== --- */
+    #what-sets-us-apart-section { font-family: 'Inter', sans-serif; background-color: #f8f9fa; padding: 100px 20px; }
+    #what-sets-us-apart-section .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    #what-sets-us-apart-section h2 { font-size: 44px; font-weight: 700; color: #101828; margin-bottom: 60px; font-family: 'Poppins', sans-serif; }
+    #what-sets-us-apart-section .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 50px; }
+    #what-sets-us-apart-section .feature-card { background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0; }
+    #what-sets-us-apart-section .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); }
+    #what-sets-us-apart-section .feature-card:hover .feature-icon { transform: scale(1.1) rotate(5deg); }
+    #what-sets-us-apart-section .feature-card:hover .feature-icon i { animation: iconPulse 0.6s ease-in-out; }
+    #what-sets-us-apart-section .feature-icon { width: 80px; height: 80px; margin-bottom: 25px; border-radius: 50%; background: linear-gradient(135deg, #b3941c, #485627); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    #what-sets-us-apart-section .feature-icon::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent); transform: translateX(-100%); transition: transform 0.6s ease; }
+    #what-sets-us-apart-section .feature-card:hover .feature-icon::before { transform: translateX(100%); }
+    #what-sets-us-apart-section .feature-icon i { font-size: 35px; color: white; transition: all 0.3s ease; position: relative; z-index: 2; }
+    #what-sets-us-apart-section .feature-card h3 { font-size: 22px; font-weight: 700; color: #1c2331; margin-bottom: 15px; }
+    #what-sets-us-apart-section .feature-card p { font-size: 16px; color: #475467; line-height: 1.6; }
+    
+    @keyframes iconPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+    
+    @keyframes iconFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+    }
+    
+    #what-sets-us-apart-section .feature-icon.floating { animation: iconFloat 2s ease-in-out infinite; }
+    
+    @media (max-width: 768px) { #what-sets-us-apart-section { padding: 80px 20px; } #what-sets-us-apart-section h2 { font-size: 32px; } #what-sets-us-apart-section .features-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+    /* --- ======================================== --- */
+    /* --- OFFERINGS SLIDER SECTION --- */
+    /* --- ======================================== --- */
+    #offerings-slider-section { 
+        font-family: 'Manrope', sans-serif; 
+        padding: 100px 20px; 
+        background: linear-gradient(180deg, #f0f8ff 0%, #e6f2ff 100%);
+        overflow: hidden;
+    }
+    
+    #offerings-slider-section .container { 
+        max-width: 1200px; 
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    #offerings-slider-section h2 {
+        font-size: 44px;
+        font-weight: 700;
+        color: #101828;
+        margin-bottom: 60px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slide {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 60px;
+        background: white;
+    }
+    
+    .slide.reverse {
+        flex-direction: row-reverse;
+    }
+    
+    .slide-content {
+        flex: 1.2;
+        text-align: left;
+    }
+    
+    .slide-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .slide h3 {
+        font-size: 36px;
+        font-weight: 800;
+        color: #101828;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+    
+    .slide .description {
+        font-size: 18px;
+        color: #344054;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+    
+    .slide .features-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .slide .features-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #475467;
+        line-height: 1.6;
+    }
+    
+    .slide .features-list .icon {
+        font-size: 20px;
+        color: #b3941c;
+        margin-right: 15px;
+        margin-top: 2px;
+        width: 25px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    
+         .slide .offering-gif {
+         width: 100%;
+         max-width: 400px;
+         height: auto;
+         border-radius: 15px;
+         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+     }
+     
+     /* Professional Icon Animations */
+     .professional-icon-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+         max-width: 400px;
+         height: 300px;
+         margin: 0 auto;
+     }
+     
+     .icon-animation {
+         position: relative;
+         width: 200px;
+         height: 200px;
+         background: linear-gradient(135deg, #b3941c, #485627);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+         animation: iconFloat 3s ease-in-out infinite;
+     }
+     
+     .icon-animation i {
+         font-size: 80px;
+         color: white;
+         z-index: 2;
+         position: relative;
+     }
+     
+     .pulse-ring {
+         position: absolute;
+         border: 3px solid rgba(179, 148, 28, 0.3);
+         border-radius: 50%;
+         height: 100%;
+         width: 100%;
+         animation: pulsate 2s ease-out infinite;
+     }
+     
+     @keyframes pulsate {
+         0% {
+             transform: scale(1);
+             opacity: 1;
+         }
+         100% {
+             transform: scale(1.4);
+             opacity: 0;
+         }
+     }
+     
+     @keyframes iconFloat {
+         0%, 100% { transform: translateY(0px); }
+         50% { transform: translateY(-10px); }
+     }
+     
+     /* Specific icon colors and effects */
+     .classroom-icon {
+         background: linear-gradient(135deg, #4facfe, #00f2fe);
+     }
+     
+     .facilitation-icon {
+         background: linear-gradient(135deg, #43e97b, #38f9d7);
+     }
+     
+     .teambuilding-icon {
+         background: linear-gradient(135deg, #fa709a, #fee140);
+     }
+     
+     .content-icon {
+         background: linear-gradient(135deg, #a8edea, #fed6e3);
+     }
+     
+     .growth-icon {
+         background: linear-gradient(135deg, #ff9a9e, #fecfef);
+     }
+     
+     .assessment-icon {
+         background: linear-gradient(135deg, #ffecd2, #fcb69f);
+     }
+     
+     .icon-animation:hover {
+         transform: scale(1.05) translateY(-5px);
+         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+     }
+    
+    .slide .highlight-quote {
+        font-style: italic;
+        color: #b3941c;
+        font-weight: 600;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    
+    /* Slider Navigation */
+    .slider-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .nav-btn {
+        background: #b3941c;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 18px;
+    }
+    
+    .nav-btn:hover {
+        background: #485627;
+        transform: scale(1.1);
+    }
+    
+    .nav-btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        transform: none;
+    }
+    
+    .slide-indicators {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .indicator.active {
+        background: #b3941c;
+        transform: scale(1.2);
+    }
+    
+    .slide-counter {
+        font-size: 16px;
+        color: #475467;
+        font-weight: 600;
+    }
+    
+    @media (max-width: 1024px) {
+        .slide {
+            flex-direction: column !important;
+            text-align: center;
+            padding: 40px 30px;
+        }
+        
+        .slide-content {
+            order: 1;
+        }
+        
+        .slide-image {
+            order: 2;
+            margin-top: 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #offerings-slider-section {
+            padding: 80px 20px;
+        }
+        
+        #offerings-slider-section h2 {
+            font-size: 32px;
+        }
+        
+        .slide {
+            padding: 30px 20px;
+        }
+        
+        .slide h3 {
+            font-size: 28px;
+        }
+        
+        .slide .description {
+            font-size: 16px;
+        }
+    }
+
+    /* --- ======================================== --- */
+    /* --- OUR APPROACH SECTION --- */
+    /* --- ======================================== --- */
+    #our-approach-section { font-family: 'Inter', sans-serif; background-color: #0f2a45; color: white; padding: 100px 20px; text-align: center; }
+    #our-approach-section .container { max-width: 1200px; margin: 0 auto; }
+    #our-approach-section h2 { font-size: 44px; font-weight: 700; margin-bottom: 60px; font-family: 'Poppins', sans-serif; }
+    #our-approach-section .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
+    #our-approach-section .approach-step { background: rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease, background 0.3s ease; }
+    #our-approach-section .approach-step:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.15); }
+    #our-approach-section .step-icon { width: 80px; height: 80px; margin: 0 auto 25px; border-radius: 50%; background: linear-gradient(135deg, #b3941c, #485627); display: flex; align-items: center; justify-content: center; }
+    #our-approach-section .step-icon i { font-size: 35px; color: white; }
+    #our-approach-section .approach-step h3 { font-size: 24px; font-weight: 700; margin-bottom: 15px; color: #b3941c; }
+    #our-approach-section .approach-step p { font-size: 16px; color: #f0f8ff; line-height: 1.6; }
+    @media (max-width: 768px) { #our-approach-section { padding: 80px 20px; } #our-approach-section h2 { font-size: 32px; } #our-approach-section .approach-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+    /* --- ======================================== --- */
+    /* --- SCROLL ANIMATION & WHATSAPP ICON --- */
+    /* --- ======================================== --- */
+    .fs-animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fs-animate-on-scroll.fs-is-visible { opacity: 1; transform: translateY(0); }
+    .fs-whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; animation: fs-whatsapp-pulse 2s infinite; transition: all 0.3s ease; }
+    .fs-whatsapp-float:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); animation-play-state: paused; }
+    @keyframes fs-whatsapp-pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+</style>
+</head>
+<body>
+
+<!-- =================================== -->
+<!-- FIXED NAVIGATION BAR (REFACTORED) -->
+<!-- =================================== -->
+<header class="site-header" id="site-header"> 
+    <div class="container"> 
+        <a href="#" class="logo-link"> 
+            <img src="https://folksschool.com/demo1/wp-content/uploads/2025/08/Folks-School-Logo-Website.jpeg" alt="Folk School Logo" class="logo-img" /> 
+        </a> 
+        
+        <nav role="navigation" class="nav-menu" id="nav-menu"> 
+            <ul class="nav-links"> 
+                <li class="nav-link"><a href="#">Home</a></li> 
+                <li class="nav-link"><a href="#">Services</a></li> 
+                <li class="nav-link"><a href="#">Blogs</a></li> 
+                <li class="nav-link"><a href="#">Gallery</a></li> 
+                <li class="nav-link"><a href="#">Certified Participants</a></li> 
+                <li class="nav-link"><a href="#">About Us</a></li> 
+            </ul> 
+            <div class="nav-cta-group"> 
+                <a href="#" class="nav-cta-btn">Corporate Learning Offerings</a> 
+                <a href="#" class="nav-cta-btn">Trainer Competency Development</a> 
+            </div> 
+        </nav> 
+        
+        <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open Menu"> 
+            <div class="hamburger-line"></div> 
+            <div class="hamburger-line"></div> 
+            <div class="hamburger-line"></div> 
+        </button> 
+    </div> 
+</header>
+
+
+<!-- CORPORATE INTRO SECTION -->
+<section id="corporate-intro-section" class="fs-animate-on-scroll">
+    <div class="intro-container">
+        <h1>Corporate Offerings</h1>
+        <p class="intro-text">Welcome to F.O.L.K.S., a space where learning meets innovation, and people development becomes an engaging journey.</p>
+        <p class="intro-text">We specialize in behavioural skills training programs that are thoughtfully curated to deliver the precise business outcomes your organization seeks.</p>
+        <p class="highlight-text">At F.O.L.K.S., we believe that learning is not a checklist, it's a crafted learning experience. Every intervention is infused with innovation, energy, and structured excellence delivered, of course, in our signature FUNN way.</p>
+    </div>
+    <div class="animated-waves">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="wave-1" d="M 0 50 C 250 100 250 0 500 50 C 750 100 750 0 1000 50 L 1000 100 L 0 100 Z"></path>
+            <path class="wave-2" d="M 0 60 C 200 0 300 100 500 60 C 700 20 800 100 1000 60 L 1000 100 L 0 100 Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- WHAT SETS US APART SECTION -->
+<section id="what-sets-us-apart-section" class="fs-animate-on-scroll">
+    <div class="container">
+        <h2>What Sets Us Apart</h2>
+        <p style="font-size: 20px; color: #5a6e83; margin-bottom: 20px;">We don't believe in one-size-fits-all. Our programs are:</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon floating">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Customised and Co-created</h3>
+                <p>Our programs are customised and co-created with clients through deep diagnostics and collaborative contracting, ensuring perfect alignment with your unique needs.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon floating">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Engaging & Experiential</h3>
+                <p>Engaging, participative, and experiential because learning sticks when it's engaging, fun and relevant to real-world applications.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon floating">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h3>Seamless Design</h3>
+                <p>Our sessions weave design principles creating a seamless learning experience than just an assortment of activities or bombardment of content.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFERINGS SLIDER SECTION -->
+<section id="offerings-slider-section" class="fs-animate-on-scroll">
+    <div class="container">
+        <h2>Our Offerings</h2>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper" id="slider-wrapper">
+                <!-- Slide 1: PAATHSHAALA -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h3>PAATHSHAALA | Classroom Experiential Interventions</h3>
+                        <p class="description">Just give us the good old whiteboard, flipcharts, props, some space and we're good to go! Say goodbye to dreary classroom sessions. Our sessions are designed to keep participants not just awake, but fully immersed.</p>
+                        <p class="description">We blend classic learning formats with powerful experiential techniques:</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-magic icon"></i>The magic lies in our detailed session plan, trainer notes, solid lesson plans, and a robust & train the trainer's model ensuring consistent delivery across facilitators and geographies.</li>
+                            <li><i class="fas fa-theater-masks icon"></i>We incorporate facilitation processes, storytelling, simulations, role plays, case studies, and reflective exercises to enhance the learning experience.</li>
+                            <li><i class="fas fa-sync-alt icon"></i>Our facilitators are trained to adapt in real time ensuring the learning stays relevant and responsive to the group.</li>
+                        </ul>
+                        <p class="highlight-quote">Paathshaala is where structure meets spontaneity, and classrooms come alive.</p>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation classroom-icon">
+                                 <i class="fas fa-chalkboard-teacher"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Slide 2: BAATCHEET -->
+                <div class="slide reverse">
+                    <div class="slide-content">
+                        <h3>BAATCHEET | Facilitative Interventions</h3>
+                        <p class="description">Rooted in our IIED philosophy—Identify, Involve, Engage, Derive—these are not just facilitation sessions. They are deep, purposeful conversations that drive clarity, alignment, and ownership.</p>
+                        <p class="description">Whether it's our pure-process facilitators mapping the perfect dialogue flow, or our Certified FaciliTrainers blending content with process, we bring sessions to life like never before.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-comments icon"></i>We create space for collective reflection and group wisdom harvesting, where insights emerge through shared dialogue and diverse perspectives.</li>
+                            <li><i class="fas fa-hands-helping icon"></i>Content are co-created with participants, enabling participants to learn from each other and build collective ownership of the outcomes.</li>
+                            <li><i class="fas fa-star icon"></i>Each session is an experience. Intense yet fun, reflective yet action-oriented ensuring participants leave with practical skills and powerful, lasting takeaways.</li>
+                        </ul>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation facilitation-icon">
+                                 <i class="fas fa-users-cog"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Slide 3: KHEL KUD -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h3>KHEL KUD | Outbound Learning</h3>
+                        <p class="description">Ready to sweat it out and stretch your limits.</p>
+                        <p class="description">Our outbound learning journeys are perfect for leadership development, team building, strategy and planning, brainstorming and more! Whether it's foundational team activities or adrenaline-pumping adventure sports, our expert team crafts experiences that drive growth through action.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-target icon"></i>Carefully curated experiential challenges aligned to your business or team goals.</li>
+                            <li><i class="fas fa-user-friends icon"></i>Expert facilitation that helps participants process the experience of the activity.</li>
+                            <li><i class="fas fa-mirror icon"></i>Structured debriefs that uncover blind spots, as real behaviors, mindsets, and traits surface and are reflected upon in a safe guided space.</li>
+                        </ul>
+                        <p class="highlight-quote">This is not just fun in the sun.. it's skilling up through play.</p>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation teambuilding-icon">
+                                 <i class="fas fa-mountain"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Slide 4: LIKHA PADHI -->
+                <div class="slide reverse">
+                    <div class="slide-content">
+                        <h3>LIKHA PADHI | Content Development</h3>
+                        <p class="description">Whether it's technical content, SOPs, detailed processes, or heavy manuals, our wordsmiths are skilled at turning complex information into formats that are easy to understand, interesting, and conducive to learning. We simplify the complex so that your people can comprehend, remember, and use the information more easily.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-graduation-cap icon"></i>Instructional design support for everything from modules to microlearning.</li>
+                            <li><i class="fas fa-file-alt icon"></i>From interactive modules, bite-sized lessons, facilitator guides to clear, concise job aids and simple explainer content, we create everything ensuring your learners get what they need, the way they need it.</li>
+                            <li><i class="fas fa-chalkboard-teacher icon"></i>Not only creating the content but if you need support in delivering the content, we're equipped to do that too.</li>
+                        </ul>
+                        <p class="highlight-quote">Whether you're launching a new process or simplifying existing workflows, Likha Padhi ensures your team gets the clarity and confidence they need.</p>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation content-icon">
+                                 <i class="fas fa-file-alt"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Slide 5: PRAGATI -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <h3>PRAGATI | Organizational Development</h3>
+                        <p class="description">Growth isn't accidental it's designed. At PRAGATI, we co-partner with organizations to drive strategy, strengthen culture, enhance performance achieving sustainable growth.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-cogs icon"></i>We use different modalities and blended approach to address both the "hard" (processes and structures) and soft (people, culture) aspects of an organisation.</li>
+                            <li><i class="fas fa-search icon"></i>We begin by deeper diagnostics to identify root challenges and have clear understanding of your needs and requirements.</li>
+                            <li><i class="fas fa-bullseye icon"></i>We deliver customized solutions that align your strategies, structures, and processes to achieve meaningful and measurable outcomes.</li>
+                        </ul>
+                        <p class="highlight-quote">We serve as your strategic partner, capability developer, and growth accelerator enabling you to advance with clarity, intent, and collaboration.</p>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation growth-icon">
+                                 <i class="fas fa-chart-line"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Slide 6: UNNATI -->
+                <div class="slide reverse">
+                    <div class="slide-content">
+                        <h3>UNNATI | Assessment Development Centres</h3>
+                        <p class="description">The first step towards growth is knowing one's strengths, improvement areas, and having a clear developmental roadmap. Our ADCs are customised to suit the organisation's & individual's needs.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-chart-line icon"></i>Custom-designed competency frameworks and development tools aligned to your business goals.</li>
+                            <li><i class="fas fa-clipboard-check icon"></i>A mix of behavioural simulations, psychometric assessment, case studies, and role-plays to assess in real time.</li>
+                            <li><i class="fas fa-road icon"></i>End-to-end support—from assessment design and delivery to individual development plans (IDPs). Not only offline but also online we bring the same depth, rigour, and experience to your screen as we do in the room.</li>
+                        </ul>
+                        <p class="highlight-quote">Whether you're identifying high-potentials or preparing your next line of leaders, our holistic, data driven, human-centric approach ensures growth is not just measured it's nurtured.</p>
+                    </div>
+                                         <div class="slide-image">
+                         <div class="professional-icon-container">
+                             <div class="icon-animation assessment-icon">
+                                 <i class="fas fa-clipboard-check"></i>
+                                 <div class="pulse-ring"></div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-nav">
+            <button class="nav-btn" id="prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="slide-indicators" id="slide-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+                <div class="indicator" data-slide="3"></div>
+                <div class="indicator" data-slide="4"></div>
+                <div class="indicator" data-slide="5"></div>
+            </div>
+            
+            <button class="nav-btn" id="next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">6</span>
+        </div>
+    </div>
+</section>
+
+<!-- OUR APPROACH SECTION -->
+<section id="our-approach-section" class="fs-animate-on-scroll">
+    <div class="container">
+        <h2>Our Approach</h2>
+        <div class="approach-grid">
+            <div class="approach-step">
+                <div class="step-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>IDENTIFY</h3>
+                <p>Our interventions begin with client contracting & diagnosis at various levels to get an in-depth understanding of the needs, challenges & pain areas to provide the right solutions.</p>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-icon">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h3>DESIGN</h3>
+                <p>Our programs are bespoke based on the needs, audience & desired outcomes.</p>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <h3>EXECUTE</h3>
+                <p>Our sessions are high on engagement, participation, fun & impactful – and of course, relevant.</p>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>ASSESS</h3>
+                <p>Post-session support for assessment at individual & organisation level to measure the learning ROI is extended using a variety of tools.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHATSAPP FLOATING ICON -->
+<a href="https://wa.me/918019705659" class="fs-whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // This check prevents the script from running multiple times if pasted more than once.
+    if (!document.body.dataset.folkSchoolScriptsLoaded) {
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- LOGIC FOR FIXED NAVIGATION BAR ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const siteHeader = document.getElementById('site-header');
+            
+            if (menuButton && siteHeader) {
+                menuButton.addEventListener('click', () => { 
+                    siteHeader.classList.toggle('menu-open');
+                    // Prevent body from scrolling when mobile menu is open
+                    document.body.classList.toggle('mobile-menu-active');
+                });
+            }
+
+            // --- LOGIC FOR SCROLL ANIMATIONS ---
+            const sectionsToAnimate = document.querySelectorAll('.fs-animate-on-scroll');
+            if (sectionsToAnimate.length > 0) {
+                const sectionObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fs-is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 }); 
+                sectionsToAnimate.forEach(section => sectionObserver.observe(section));
+            }
+
+            // --- LOGIC FOR OFFERINGS SLIDER ---
+            const sliderWrapper = document.getElementById('slider-wrapper');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const indicators = document.querySelectorAll('.indicator');
+            const currentSlideSpan = document.getElementById('current-slide');
+            const totalSlidesSpan = document.getElementById('total-slides');
+            
+            let currentSlide = 0;
+            const totalSlides = 6;
+            
+            // Update total slides display
+            if (totalSlidesSpan) {
+                totalSlidesSpan.textContent = totalSlides;
+            }
+            
+            function updateSlider() {
+                if (sliderWrapper) {
+                    const translateX = -currentSlide * 100;
+                    sliderWrapper.style.transform = `translateX(${translateX}%)`;
+                }
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+                
+                // Update counter
+                if (currentSlideSpan) {
+                    currentSlideSpan.textContent = currentSlide + 1;
+                }
+                
+                // Update navigation buttons
+                if (prevBtn) {
+                    prevBtn.disabled = currentSlide === 0;
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = currentSlide === totalSlides - 1;
+                }
+            }
+            
+            function nextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlider();
+                }
+            }
+            
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlider();
+                }
+            }
+            
+            function goToSlide(slideIndex) {
+                currentSlide = slideIndex;
+                updateSlider();
+            }
+            
+            // Event listeners
+            if (nextBtn) {
+                nextBtn.addEventListener('click', nextSlide);
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+            }
+            
+            // Indicator click handlers
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Auto-play functionality (optional)
+            let autoPlayInterval;
+            
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    if (currentSlide < totalSlides - 1) {
+                        nextSlide();
+                    } else {
+                        currentSlide = 0;
+                        updateSlider();
+                    }
+                }, 5000); // Change slide every 5 seconds
+            }
+            
+            function stopAutoPlay() {
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                }
+            }
+            
+            // Start auto-play
+            startAutoPlay();
+            
+            // Pause auto-play on hover
+            const sliderContainer = document.querySelector('.slider-container');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+                sliderContainer.addEventListener('mouseleave', startAutoPlay);
+            }
+            
+            // Initialize slider
+            updateSlider();
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+
+        });
+        
+        document.body.dataset.folkSchoolScriptsLoaded = 'true';
+    }
+</script>
+
+</body>
+</html>
